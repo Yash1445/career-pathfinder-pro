@@ -1,0 +1,40 @@
+# Kubernetes Configuration Files
+
+# This directory is intended for Kubernetes configuration files.
+# You can create YAML files for deployments, services, ingress, etc. as needed.
+
+# Example of a deployment file (deployment.yaml):
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: skillsync-backend
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: skillsync-backend
+#   template:
+#     metadata:
+#       labels:
+#         app: skillsync-backend
+#     spec:
+#       containers:
+#       - name: backend
+#         image: your-backend-image:latest
+#         ports:
+#         - containerPort: 3000
+
+# Example of a service file (service.yaml):
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: skillsync-backend
+# spec:
+#   type: ClusterIP
+#   ports:
+#   - port: 80
+#     targetPort: 3000
+#   selector:
+#     app: skillsync-backend
+
+# You can add your specific Kubernetes configuration files here.

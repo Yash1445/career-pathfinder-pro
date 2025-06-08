@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5cf6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background elements */
+.App::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.App::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.logo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffffff, #e0e7ff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.skill-input-section, .analysis-results {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-input-container h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-input {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.skill-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.skill-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.add-button, .analyze-button, .new-analysis-button {
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-button:hover, .analyze-button:hover, .new-analysis-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(45deg, #4338ca, #6d28d9);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.skills-list {
+  margin-top: 2rem;
+}
+
+.skills-list h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.skill-tag {
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.8), rgba(102, 126, 234, 0.8));
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.remove-skill {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.remove-skill:hover {
+  background: rgba(255, 0, 0, 0.6);
+  transform: scale(1.1);
+}
+
+.analyze-button {
+  display: block;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #10b981, #059669);
+}
+
+.analyze-button:hover {
+  background: linear-gradient(45deg, #059669, #047857);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+/* Analysis Results Styles */
+.analysis-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.analysis-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.career-recommendation {
+  margin-bottom: 2.5rem;
+}
+
+.career-recommendation h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.career-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.career-title {
+  color: #fbbf24;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.career-description {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.career-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.match-score {
+  color: #10b981;
+}
+
+.salary {
+  color: #f59e0b;
+}
+
+.skills-to-learn {
+  margin-bottom: 2.5rem;
+}
+
+.skills-to-learn h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-gap-tag {
+  background: linear-gradient(45deg, rgba(249, 115, 22, 0.8), rgba(234, 88, 12, 0.8));
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.market-insights {
+  margin-bottom: 2rem;
+}
+
+.market-insights h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.insights-content {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.insights-content p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.insights-content p:last-child {
+  margin-bottom: 0;
+}
+
+.new-analysis-button {
+  display: block;
+  margin: 2rem auto 0;
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+}
+
+.new-analysis-button:hover {
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .skill-input-section, .analysis-results {
+    padding: 1.5rem;
+  }
+  
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skill-input {
+    min-width: 100%;
+  }
+  
+  .career-stats {
+    gap: 1.5rem;
+  }
+  
+  .skills-container, .skills-grid {
+    justify-content: center;
+  }
+}

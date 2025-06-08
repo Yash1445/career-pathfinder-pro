@@ -1,0 +1,72 @@
+[
+    {
+        "skill": "JavaScript",
+        "category": "Programming Languages",
+        "level": "Advanced"
+    },
+    {
+        "skill": "Python",
+        "category": "Programming Languages",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "React",
+        "category": "Frameworks",
+        "level": "Advanced"
+    },
+    {
+        "skill": "Node.js",
+        "category": "Frameworks",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "SQL",
+        "category": "Databases",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "MongoDB",
+        "category": "Databases",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "HTML",
+        "category": "Markup Languages",
+        "level": "Advanced"
+    },
+    {
+        "skill": "CSS",
+        "category": "Styling",
+        "level": "Advanced"
+    },
+    {
+        "skill": "Git",
+        "category": "Version Control",
+        "level": "Advanced"
+    },
+    {
+        "skill": "Docker",
+        "category": "DevOps",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "AWS",
+        "category": "Cloud Services",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "Machine Learning",
+        "category": "AI/ML",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "Data Analysis",
+        "category": "Data Science",
+        "level": "Intermediate"
+    },
+    {
+        "skill": "UI/UX Design",
+        "category": "Design",
+        "level": "Intermediate"
+    }
+]

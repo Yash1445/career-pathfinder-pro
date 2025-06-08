@@ -1,0 +1,21 @@
+# Contents of the file: /skillsync/ai-models/api
+
+from flask import Flask, request, jsonify
+from preprocessing import preprocess_data
+from inference import make_inference
+
+app = Flask(__name__)
+
+@app.route('/api/inference', methods=['POST'])
+def inference():
+    data = request.json
+    if not data:
+        return jsonify({'error': 'No input data provided'}), 400
+    
+    preprocessed_data = preprocess_data(data)
+    result = make_inference(preprocessed_data)
+    
+    return jsonify(result)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

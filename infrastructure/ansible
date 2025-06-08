@@ -1,0 +1,37 @@
+# Ansible Configuration Files
+
+# This directory is intended for Ansible playbooks and roles.
+# You can create your playbooks here to automate deployment and configuration tasks. 
+
+# Example of a simple playbook file
+# Create a file named `site.yml` for your main playbook.
+
+# site.yml
+- hosts: all
+  become: yes
+  tasks:
+    - name: Ensure the latest version of the package is installed
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - git
+        - nginx
+        - python3-pip
+
+# You can also create roles for better organization.
+# Create a directory named `roles` and add your roles there.
+
+# roles/
+# ├── common/
+# │   ├── tasks/
+# │   │   └── main.yml
+# │   └── handlers/
+# │       └── main.yml
+# └── webserver/
+#     ├── tasks/
+#     │   └── main.yml
+#     └── templates/
+#         └── nginx.conf.j2
+
+# This file is intentionally left blank.

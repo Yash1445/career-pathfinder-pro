@@ -1,0 +1,47 @@
+[
+    {
+        "courseId": 1,
+        "title": "Introduction to Programming",
+        "description": "Learn the basics of programming using Python.",
+        "duration": "4 weeks",
+        "level": "Beginner",
+        "provider": "Coursera",
+        "link": "https://www.coursera.org/learn/introduction-to-programming"
+    },
+    {
+        "courseId": 2,
+        "title": "Data Science Specialization",
+        "description": "A comprehensive introduction to data science using R.",
+        "duration": "10 months",
+        "level": "Intermediate",
+        "provider": "Coursera",
+        "link": "https://www.coursera.org/specializations/jhu-data-science"
+    },
+    {
+        "courseId": 3,
+        "title": "Web Development Bootcamp",
+        "description": "Learn full-stack web development with HTML, CSS, and JavaScript.",
+        "duration": "12 weeks",
+        "level": "Intermediate",
+        "provider": "Udemy",
+        "link": "https://www.udemy.com/course/the-web-developer-bootcamp/"
+    },
+    {
+        "courseId": 4,
+        "title": "Machine Learning",
+        "description": "An introduction to machine learning concepts and algorithms.",
+        "duration": "11 weeks",
+        "level": "Advanced",
+        "provider": "Coursera",
+        "link": "https://www.coursera.org/learn/machine-learning"
+    },
+    {
+        "courseId": 5,
+        "title": "Cloud Computing Basics",
+        "description": "Understand the fundamentals of cloud computing.",
+        "duration": "6 weeks",
+        "level": "Beginner",
+        "provider": "edX",
+        "link": "https://www.edx.org/course/cloud-computing-basics"
+    }
+]

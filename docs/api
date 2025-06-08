@@ -1,0 +1,92 @@
+# API Documentation
+
+## Authentication
+
+### Login
+- **Endpoint:** `POST /api/auth/login`
+- **Description:** Authenticates a user and returns a JWT token.
+- **Request Body:**
+  - `email`: User's email address
+  - `password`: User's password
+- **Response:**
+  - `token`: JWT token for authenticated requests
+  - `user`: User object containing user details
+
+### Register
+- **Endpoint:** `POST /api/auth/register`
+- **Description:** Registers a new user.
+- **Request Body:**
+  - `name`: User's full name
+  - `email`: User's email address
+  - `password`: User's password
+- **Response:**
+  - `message`: Success message
+  - `user`: User object containing user details
+
+## User Management
+
+### Get User Profile
+- **Endpoint:** `GET /api/users/me`
+- **Description:** Retrieves the authenticated user's profile.
+- **Response:**
+  - `user`: User object containing user details
+
+### Update User Profile
+- **Endpoint:** `PUT /api/users/me`
+- **Description:** Updates the authenticated user's profile.
+- **Request Body:**
+  - `name`: User's full name (optional)
+  - `email`: User's email address (optional)
+- **Response:**
+  - `message`: Success message
+  - `user`: Updated user object
+
+## Career Analysis
+
+### Get Career Paths
+- **Endpoint:** `GET /api/careers`
+- **Description:** Retrieves a list of available career paths.
+- **Response:**
+  - `careers`: Array of career path objects
+
+### Analyze Career
+- **Endpoint:** `POST /api/careers/analyze`
+- **Description:** Analyzes a user's skills and recommends career paths.
+- **Request Body:**
+  - `skills`: Array of user's skills
+- **Response:**
+  - `recommendations`: Array of recommended career paths
+
+## Job Management
+
+### Get Job Listings
+- **Endpoint:** `GET /api/jobs`
+- **Description:** Retrieves a list of job listings.
+- **Response:**
+  - `jobs`: Array of job objects
+
+### Apply for Job
+- **Endpoint:** `POST /api/jobs/apply`
+- **Description:** Applies for a job.
+- **Request Body:**
+  - `jobId`: ID of the job to apply for
+  - `resume`: User's resume file
+- **Response:**
+  - `message`: Success message
+
+## Analytics
+
+### Get User Analytics
+- **Endpoint:** `GET /api/analytics/user`
+- **Description:** Retrieves analytics data for the authenticated user.
+- **Response:**
+  - `analytics`: User analytics data
+
+### Get Career Analytics
+- **Endpoint:** `GET /api/analytics/career`
+- **Description:** Retrieves analytics data for career paths.
+- **Response:**
+  - `analytics`: Career analytics data
+
+## Error Handling
+- All endpoints return appropriate HTTP status codes and error messages for invalid requests or server errors.
